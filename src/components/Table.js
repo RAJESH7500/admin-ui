@@ -27,16 +27,16 @@ const Table = ({
         </tr>
       </thead>
       <tbody>
-        {users.map((user, index) => (
+        {users.map((user) => (
           <tr key={user.id}>
-            <td>
+            <td className={userIds.includes(user.id) ? 'gray' : ''}>
               <input
                 type="checkbox"
                 checked={userIds.includes(user.id)}
                 onChange={(e) => handleCheckBoxClick(e, user.id)}
               />
             </td>
-            <td>
+            <td className={userIds.includes(user.id) ? 'gray' : ''}>
               <input
                 className="table-data"
                 type="text"
@@ -46,7 +46,7 @@ const Table = ({
                 disabled={editRowId !== user.id}
               />
             </td>
-            <td>
+            <td className={userIds.includes(user.id) ? 'gray' : ''}>
               <input
                 className="table-data"
                 type="email"
@@ -56,7 +56,7 @@ const Table = ({
                 disabled={editRowId !== user.id}
               />
             </td>
-            <td>
+            <td className={userIds.includes(user.id) ? 'gray' : ''}>
               <input
                 className="table-data"
                 type="text"
@@ -66,7 +66,7 @@ const Table = ({
                 disabled={editRowId !== user.id}
               />
             </td>
-            <td>
+            <td className={userIds.includes(user.id) ? 'gray' : ''}>
               <button className="btn" onClick={() => handleEdit(user.id)}>
                 <img
                   src={editRowId === user.id ? './save.svg' : './edit.svg'}

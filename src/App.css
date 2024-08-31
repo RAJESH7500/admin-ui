@@ -35,3 +35,6 @@
   border: none;
   background-color: transparent;
 }
+.gray {
+  background-color: #dddddd !important;
+}
